@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="cyber-api-base" content="" />
+  <title>Cyber-Shield Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/index1.css">
+</head>
+<body>
+  <div class="app-shell">
+    <section id="landingView" class="landing">
+      <header class="landing-nav">
+        <div class="logo logo-link" role="button" tabindex="0"><span class="logo-badge"><img class="logo-image" src="../assets/logo-shield.svg" alt="Cyber-Shield logo"></span> Cyber-Shield</div>
+        <nav>
+          <button id="joinNowBtn" class="join-now" type="button">Join Now</button>
+        </nav>
+      </header>
+
+      <div class="landing-body">
+        <div class="landing-copy">
+          <div class="landing-emoji">🧡</div>
+          <h1>Secure Your<br>Digital Life</h1>
+          <p>Unlock the power of cybersecurity with practical tools and a guided secure experience.</p>
+          <div class="landing-tags">
+            <span>Protect Your Data</span>
+            <span>Safeguard Your Online Presence</span>
+          </div>
+        </div>
+
+        <div class="landing-visual" aria-hidden="true">
+          <div class="ellipse"></div>
+          <div class="phone"></div>
+          <div class="card-lock">🔒</div>
+          <div class="dot dot-a"></div>
+          <div class="dot dot-b"></div>
+          <div class="dot dot-c"></div>
+          <div class="keyboard"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="authView" class="auth hidden">
+      <div class="hero">
+        <div class="logo logo-link" role="button" tabindex="0"><span class="logo-badge"><img class="logo-image" src="../assets/logo-shield.svg" alt="Cyber-Shield logo"></span> Cyber-Shield</div>
+        <h1>Secure Your<br>Digital Life</h1>
+        <p>Login or create your account. After valid sign in, your cyber dashboard opens with learning resources and Analyzer tools.</p>
+        <div class="orb"></div>
+      </div>
+
+      <div style="display:grid; align-items:center;">
+        <div class="auth-card">
+          <div class="switch">
+            <button id="showLogin" class="active" type="button">Login</button>
+            <button id="showSignup" type="button">Sign Up</button>
+          </div>
+
+          <div id="loginPane" class="pane active">
+            <h2>Welcome Back</h2>
+            <p class="sub">Use your registered email and password</p>
+            <form id="loginForm">
+              <div class="field">
+                <label for="loginEmail">Email</label>
+                <input id="loginEmail" type="email" required placeholder="you@example.com" />
+              </div>
+              <div class="field">
+                <label for="loginPass">Password</label>
+                <input id="loginPass" type="password" required placeholder="Enter password" />
+              </div>
+              <button class="submit" type="submit">Login</button>
+              <div id="loginMsg" class="msg"></div>
+            </form>
+          </div>
+
+          <div id="signupPane" class="pane">
+            <h2>Create Account</h2>
+            <p class="sub">Set credentials to access your dashboard</p>
+            <form id="signupForm">
+              <div class="field">
+                <label for="name">Full Name</label>
+                <input id="name" type="text" required placeholder="Your full name" />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" type="email" required placeholder="you@example.com" />
+              </div>
+              <div class="field">
+                <label for="pass">Password</label>
+                <input id="pass" type="password" required minlength="6" placeholder="Minimum 6 characters" />
+              </div>
+              <button class="submit" type="submit">Sign Up</button>
+              <div id="signupMsg" class="msg"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dashView" class="dashboard hidden">
+      <aside class="side">
+        <div class="profile">
+          <div class="avatar">🧑</div>
+          <div class="profile-name" id="userLabel">User</div>
+        </div>
+
+        <ul class="menu">
+          <li><button id="menuDashboard" class="active" type="button">Dashboard</button></li>
+          <li><button id="menuAbout" type="button">About Security</button></li>
+          <li><button id="menuServices" type="button">Services</button></li>
+          <li><button id="menuContact" type="button">Contact</button></li>
+          <li><button id="menuSettings" type="button">Settings</button></li>
+          <li><button id="menuSupport" type="button">Support</button></li>
+        </ul>
+
+        <button id="logoutBtn" class="logout" type="button">Logout</button>
+      </aside>
+
+      <main class="main">
+        <div class="top">
+          <div class="top-tabs">
+            <button id="learnTab" class="active" type="button">Learn</button>
+            <button id="scoreTab" type="button">My Scores</button>
+            <button id="leaderboardTab" type="button">Leaderboard</button>
+            <button id="anTab" type="button">Analyzer</button>
+            <button id="adminTab" type="button">Data</button>
+          </div>
+          <div class="welcome" id="welcome">Welcome</div>
+        </div>
+
+        <div class="panel">
+          <section id="learnSection" class="section active">
+            <h3>Security Learning</h3>
+            <p class="tag">Game modules have been removed from this project. Use the Analyzer and guidance sections for practical security checks.</p>
+            <div class="cards">
+              <article id="learnGameUrlCard" class="card game-card-click">
+                <img class="card-media" src="../assets/game-links.svg" alt="URL challenge learning card" />
+                <h4><a class="learn-link" href="/game/cybear-challenge.html?game=url">Learning Game: URL Challenge</a></h4>
+                <p class="tag">Train on suspicious link patterns and domain signals.</p>
+              </article>
+              <article id="learnGameApkCard" class="card game-card-click">
+                <img class="card-media" src="../assets/game-malware.svg" alt="APK challenge learning card" />
+                <h4><a class="learn-link" href="/game/cybear-challenge.html?game=apk">Learning Game: APK Challenge</a></h4>
+                <p class="tag">Practice APK triage using package/hash indicators.</p>
+              </article>
+              <article id="learnGameEmailCard" class="card game-card-click">
+                <img class="card-media" src="../assets/game-phishing.svg" alt="Email challenge learning card" />
+                <h4><a class="learn-link" href="/game/cybear-challenge.html?game=email">Learning Game: Email Challenge</a></h4>
+                <p class="tag">Identify phishing intent from headers and message tone.</p>
+              </article>
+              <article id="learnGamePasswordCard" class="card game-card-click">
+                <img class="card-media" src="../assets/game-password.svg" alt="Password challenge learning card" />
+                <h4><a class="learn-link" href="/game/cybear-challenge.html?game=password">Learning Game: Password Challenge</a></h4>
+                <p class="tag">Build strong passphrases and avoid common password attacks.</p>
+              </article>
+              <article id="learnGameSocialCard" class="card game-card-click">
+                <img class="card-media" src="../assets/game-social.svg" alt="Social engineering challenge learning card" />
+                <h4><a class="learn-link" href="/game/cybear-challenge.html?game=social-engineering">Learning Game: Social Engineering Challenge</a></h4>
+                <p class="tag">Spot manipulation tactics across chat, calls, and messages.</p>
+              </article>
+              <article id="learnGameIncidentCard" class="card game-card-click">
+                <img class="card-media" src="../assets/logo-shield.svg" alt="Incident response challenge learning card" />
+                <h4><a class="learn-link" href="/game/cybear-challenge.html?game=incident-response">Learning Game: Incident Response Challenge</a></h4>
+                <p class="tag">Practice first-response actions after suspicious activity alerts.</p>
+              </article>
+            </div>
+          </section>
+          <section id="leaderboardSection" class="section">
+            <div class="lb-hero">
+              <div>
+                <h3>Game Leaderboard Command Center</h3>
+                <p class="tag">Track your score progression, compare rankings, and review recent game runs in real time.</p>
+              </div>
+              <div class="lb-filter-wrap">
+                <label for="lbGameFilter">Game Scope</label>
+                <select id="lbGameFilter">
+                  <option value="all">All Games</option>
+                  <option value="url">URL Challenge</option>
+                  <option value="apk">APK Challenge</option>
+                  <option value="email">Email Challenge</option>
+                  <option value="password">Password Challenge</option>
+                  <option value="social-engineering">Social Engineering</option>
+                  <option value="incident-response">Incident Response</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="lb-stats-grid">
+              <article class="lb-stat-card">
+                <h4>Total Runs</h4>
+                <p id="lbRuns">0</p>
+              </article>
+              <article class="lb-stat-card">
+                <h4>Average Score</h4>
+                <p id="lbAvgScore">0</p>
+              </article>
+              <article class="lb-stat-card">
+                <h4>Best Score</h4>
+                <p id="lbBestScore">0</p>
+              </article>
+              <article class="lb-stat-card">
+                <h4>Games Played</h4>
+                <p id="lbGamesPlayed">0</p>
+              </article>
+            </div>
+
+            <div class="lb-chart-card">
+              <div class="lb-chart-head">
+                <h4>Score Timeline</h4>
+                <span id="lbChartHint" class="tag">Latest 60 runs</span>
+              </div>
+              <canvas id="leaderboardChart" height="220"></canvas>
+            </div>
+
+            <div class="lb-panels">
+              <article class="lb-panel">
+                <h4>Top Players</h4>
+                <div class="leader-table-wrap">
+                  <table class="leader-table">
+                    <thead>
+                      <tr>
+                        <th>Rank</th>
+                        <th>Player</th>
+                        <th>Avg Score</th>
+                        <th>Best</th>
+                        <th>Runs</th>
+                      </tr>
+                    </thead>
+                    <tbody id="lbTableBody"></tbody>
+                  </table>
+                </div>
+              </article>
+
+              <article class="lb-panel">
+                <h4>Your Recent Runs</h4>
+                <div class="leader-table-wrap">
+                  <table class="leader-table">
+                    <thead>
+                      <tr>
+                        <th>Player</th>
+                        <th>Game</th>
+                        <th>Score</th>
+                        <th>Accuracy</th>
+                        <th>Time</th>
+                      </tr>
+                    </thead>
+                    <tbody id="lbRecentBody"></tbody>
+                  </table>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="anSection" class="section">
+            <h3>Analyzer Suite</h3>
+
+            <div class="an-layout">
+              <div class="an-left-col">
+                <aside class="an-desktop-history" aria-label="My analyzed data history">
+                  <div class="an-history-head">
+                    <h4>My Analyzed Data</h4>
+                    <span id="anHistoryCount" class="tag">0 records</span>
+                  </div>
+                  <p class="tag">Desktop quick view of your URL, APK, and email analysis history.</p>
+                  <div id="analyzerDesktopList" class="an-history-list">
+                    <p class="an-history-empty">No analyzer data yet.</p>
+                  </div>
+                </aside>
+                <div class="an-chat-launch">
+                  <button id="openAnalyzerChatBtn" class="an-btn" type="button" data-open-analyzer-chat data-analyzer="current">Open AI Chatbot</button>
+                </div>
+              </div>
+
+              <div class="an-work">
+                <div class="subtabs">
+                  <button id="urlBtn" class="active" type="button">URL Analyzer</button>
+                  <button id="apkBtn" type="button">APK Analyzer</button>
+                  <button id="mailBtn" type="button">Email Analyzer</button>
+                </div>
+
+                <div id="urlPane" class="an-pane active">
+                  <form id="urlAnalyzeForm" class="an-form">
+                    <label for="urlInput">URL to scan</label>
+                    <input id="urlInput" type="url" placeholder="https://example.com/login" />
+                    <div class="an-form-actions">
+                      <button id="urlAnalyzeBtn" class="an-btn" type="button">Analyze URL + AI Agent</button>
+                    </div>
+                    <p id="result" class="tag"></p>
+                  </form>
+                  <div id="urlResult" class="url-result hidden">
+                    <div class="risk-head">
+                      <h4>Multi-Source URL Risk Analysis</h4>
+                      <span id="riskLevelBadge" class="risk-badge">-</span>
+                    </div>
+                    <div class="risk-meter">
+                      <div id="riskMeterFill" class="risk-meter-fill" style="width:0%"></div>
+                    </div>
+                    <p id="riskSummary" class="tag">Run analysis to see details.</p>
+                    <div class="risk-grid">
+                      <article class="risk-card">
+                        <h5>Overall Risk</h5>
+                        <p id="riskScoreValue">0%</p>
+                      </article>
+                      <article class="risk-card">
+                        <h5>Confidence</h5>
+                        <p id="riskConfidenceValue">0%</p>
+                      </article>
+                    </div>
+                    <div id="riskFactors" class="risk-factors"></div>
+                  </div>
+                </div>
+
+                <div id="apkPane" class="an-pane">
+                  <form id="apkAnalyzeForm" class="an-form">
+                    <label for="apkName">APK package / hash</label>
+                    <input id="apkName" type="text" placeholder="com.app.sample or SHA256" />
+                    <label for="apkFile">Or select APK file from system</label>
+                    <input id="apkFile" type="file" accept=".apk,application/vnd.android.package-archive" />
+                    <p id="apkFileMeta" class="tag">You can paste package/hash above or choose an APK file.</p>
+                    <label for="apkSource">Source</label>
+                    <select id="apkSource">
+                      <option>Play Store</option>
+                      <option>Direct Download</option>
+                      <option>Unknown</option>
+                    </select>
+                    <div class="an-form-actions">
+                      <button id="apkAnalyzeBtn" class="an-btn" type="button">Analyze APK + AI Agent</button>
+                    </div>
+                  </form>
+                  <div id="apkResult" class="url-result hidden">
+                    <div class="risk-head">
+                      <h4>AI APK Risk Analysis</h4>
+                      <span id="apkRiskLevelBadge" class="risk-badge">-</span>
+                    </div>
+                    <div class="risk-meter">
+                      <div id="apkRiskMeterFill" class="risk-meter-fill" style="width:0%"></div>
+                    </div>
+                    <p id="apkRiskSummary" class="tag">Run analysis to see details.</p>
+                    <div class="risk-grid">
+                      <article class="risk-card">
+                        <h5>Overall Risk</h5>
+                        <p id="apkRiskScoreValue">0%</p>
+                      </article>
+                      <article class="risk-card">
+                        <h5>Confidence</h5>
+                        <p id="apkRiskConfidenceValue">0%</p>
+                      </article>
+                    </div>
+                    <div id="apkRiskFactors" class="risk-factors"></div>
+                  </div>
+                </div>
+
+                <div id="mailPane" class="an-pane">
+                  <form id="mailAnalyzeForm" class="an-form">
+                    <label for="mailHead">Email headers / content</label>
+                    <textarea id="mailHead" placeholder="Paste headers or suspicious email content"></textarea>
+                    <div class="an-form-actions">
+                      <button id="mailAnalyzeBtn" class="an-btn" type="button">Analyze Email + AI Agent</button>
+                    </div>
+                  </form>
+                  <div id="emailResult" class="url-result hidden">
+                    <div class="risk-head">
+                      <h4>AI Email Risk Analysis</h4>
+                      <span id="emailRiskLevelBadge" class="risk-badge">-</span>
+                    </div>
+                    <div class="risk-meter">
+                      <div id="emailRiskMeterFill" class="risk-meter-fill" style="width:0%"></div>
+                    </div>
+                    <p id="emailRiskSummary" class="tag">Run analysis to see details.</p>
+                    <div class="risk-grid">
+                      <article class="risk-card">
+                        <h5>Overall Risk</h5>
+                        <p id="emailRiskScoreValue">0%</p>
+                      </article>
+                      <article class="risk-card">
+                        <h5>Confidence</h5>
+                        <p id="emailRiskConfidenceValue">0%</p>
+                      </article>
+                    </div>
+                    <div id="emailRiskFactors" class="risk-factors"></div>
+                  </div>
+                </div>
+                <article class="agent-panel">
+                  <div class="agent-head">
+                    <h4>AI Investigator Trace</h4>
+                    <span class="tag">Merged with Analyzer</span>
+                  </div>
+                  <div id="agentStatus" class="tag">Idle.</div>
+                  <div id="agentSteps" class="agent-steps"></div>
+                  <div id="agentReport" class="agent-report hidden"></div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <section id="adminSection" class="section">
+            <h3>Analyzer Data</h3>
+            <p class="tag">Stored URL, APK, and email analyzer activity. Admin can view all users and delete individual records.</p>
+            <div class="data-controls">
+              <label for="dataTypeFilter">Filter</label>
+              <select id="dataTypeFilter">
+                <option value="all">All</option>
+                <option value="url">URL Analyzer</option>
+                <option value="apk">APK Analyzer</option>
+                <option value="email">Email Analyzer</option>
+              </select>
+              <button id="dataRefreshBtn" class="an-btn" type="button">Refresh</button>
+              <button id="dataClearBtn" class="settings-btn danger" type="button">Delete Filtered</button>
+            </div>
+            <div class="leader-table-wrap" style="margin-bottom:14px;">
+              <table class="leader-table">
+                <thead>
+                  <tr>
+                    <th>Time</th>
+                    <th>Player</th>
+                    <th>Type</th>
+                    <th>Details</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="dataTableBody"></tbody>
+              </table>
+            </div>
+            <form id="adminExportForm" class="an-form">
+              <label for="adminKeyInput">Admin Key</label>
+              <input id="adminKeyInput" type="password" placeholder="Enter admin export key" />
+              <button id="exportAnalyzerBtn" class="an-btn" type="submit">Download Excel CSV</button>
+              <button id="exportLeaderboardBtn" class="an-btn" type="button">Download Leaderboard Excel CSV</button>
+            </form>
+          </section>
+
+          <section id="infoSection" class="section">
+            <h3 id="infoTitle">About Security</h3>
+            <p id="infoDesc" class="tag"></p>
+            <div id="infoBody" class="an-form"></div>
+          </section>
+
+          <section id="scoreSection" class="section">
+            <div class="lb-hero">
+              <div>
+                <h3>My Score Board</h3>
+                <p class="tag">Only your score history is shown here.</p>
+              </div>
+            </div>
+            <div class="lb-stats-grid">
+              <article class="lb-stat-card">
+                <h4>Total Runs</h4>
+                <p id="myRuns">0</p>
+              </article>
+              <article class="lb-stat-card">
+                <h4>Average Score</h4>
+                <p id="myAvgScore">0</p>
+              </article>
+              <article class="lb-stat-card">
+                <h4>Best Score</h4>
+                <p id="myBestScore">0</p>
+              </article>
+              <article class="lb-stat-card">
+                <h4>Games Played</h4>
+                <p id="myGamesPlayed">0</p>
+              </article>
+            </div>
+            <article class="lb-panel">
+              <h4>My Recent Runs</h4>
+              <div class="leader-table-wrap">
+                <table class="leader-table">
+                  <thead>
+                    <tr>
+                      <th>Game</th>
+                      <th>Score</th>
+                      <th>Accuracy</th>
+                      <th>Time</th>
+                    </tr>
+                  </thead>
+                  <tbody id="myRecentBody"></tbody>
+                </table>
+              </div>
+            </article>
+          </section>
+
+          <section id="leaderSection" class="section">
+            <h3>Leaderboard</h3>
+            <p class="tag">Leaderboard has been removed with game modules.</p>
+          </section>
+
+          <section id="settingsSection" class="section">
+            <h3>Settings</h3>
+            <p class="tag">Control appearance preferences for your dashboard experience.</p>
+            <div class="settings-wrap">
+              <article class="settings-card">
+                <h4>Theme Mode</h4>
+                <p>Choose how Cyber-Shield should look.</p>
+                <div class="theme-switch">
+                  <button id="themeDarkBtn" class="active" type="button">Dark Mode</button>
+                  <button id="themeLightBtn" type="button">Light Mode</button>
+                </div>
+              </article>
+              <article class="settings-card settings-danger">
+                <h4>Account</h4>
+                <p>Permanently delete your account and remove access credentials.</p>
+                <button id="deleteAccountBtn" class="settings-btn danger" type="button">Delete Account</button>
+              </article>
+            </div>
+          </section>
+        </div>
+      </main>
+    </section>
+  </div>
+
+  <div id="chatbotModal" class="chatbot-modal hidden" role="dialog" aria-modal="true" aria-labelledby="chatbotTitle">
+    <div class="chatbot-dialog">
+      <div class="chatbot-head">
+        <div class="chatbot-head-copy">
+          <h4 id="chatbotTitle">Cyber-Shield AI Copilot</h4>
+          <p id="chatbotHint">Threat-focused guidance in real time.</p>
+        </div>
+        <span id="chatbotStatusBadge" class="chatbot-status">Online</span>
+        <button id="chatbotCloseBtn" class="chatbot-close" type="button" aria-label="Close chatbot">x</button>
+      </div>
+      <div id="chatbotLog" class="support-chat-log chatbot-log"></div>
+      <div id="chatbotQuickActions" class="chatbot-quick-actions">
+        <button type="button" class="chatbot-chip" data-prompt="Is this URL suspicious? Explain in 3 points.">Check a URL</button>
+        <button type="button" class="chatbot-chip" data-prompt="Give me a fast incident response checklist for a phishing email.">IR Checklist</button>
+        <button type="button" class="chatbot-chip" data-prompt="How do I verify if an APK is safe before installing?">APK Safety</button>
+      </div>
+      <form id="chatbotForm" class="support-chat-form chatbot-form">
+        <textarea id="chatbotInput" rows="3" maxlength="1600" placeholder="Ask any cybersecurity question..."></textarea>
+        <div class="chatbot-form-foot">
+          <span id="chatbotCounter">0/1600</span>
+        </div>
+        <button id="chatbotSend" class="an-btn" type="submit">Ask AI</button>
+      </form>
+    </div>
+  </div>
+
+    <script src="../js/index1.js"></script>
+    <script src="../js/leaderboard.js"></script>
+</body>
+</html>
+
+
